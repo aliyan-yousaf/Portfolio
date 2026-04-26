@@ -646,6 +646,21 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 }
 
 /* Mockup elements */
+
+.mockup-screen,
+.mockup-phone {
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+}
+
+.mockup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .solution-cards {
   display: flex;
   gap: 32px;
