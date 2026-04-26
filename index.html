@@ -1,190 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Aliyan Yousaf | Creative Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aliyan — Web Developer & UX/UI Designer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">Aliyan Yousaf</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about" style="border-bottom: 2x solid rgb(43, 108, 158); padding-bottom: 0px;">About</a></li>
-      <li><a href="#projects" style="border-bottom: 2x solid rgb(43, 108, 158); padding-bottom: 0px;">Projects</a></li>
-      <li><a href="#contact" style="border-bottom: 2x solid rgb(43, 108, 158); padding-bottom: 0px;">Contact</a></li>
-    </ul>
+  <!-- ============================================================
+       COOKIE BANNER
+  ============================================================ -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-inner">
+      <img src="img/cookie.svg" alt="cookie" class="cookie-icon" />
+      <h4>We use cookies</h4>
+      <p>This site uses cookies to enhance your experience. By continuing to browse this site, you accept our use of cookies.</p>
+      <div class="cookie-btns">
+        <button class="btn-accept" onclick="acceptCookies()">Accept</button>
+        <button class="btn-decline" onclick="declineCookies()">Decline</button>
+      </div>
+    </div>
   </div>
-</nav>
 
-<main>
-  <section id="home" class="hero section">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <span class="hero-badge">✦ Front end developer</span>
-          <h1>Building user-facing parts of websites and applications</h1>
-          <p class="hero-desc">I blend elegant design and clean code to build impactful web experiences. Based in Berlin working worldwide.</p>
-          <div class="btn-group">
-            <a href="#projects" class="btn btn-primary">View work →</a>
-            <a href="#contact" class="btn btn-outline">Let's talk</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="avatar-symbol">✨</div>
-        </div>
+  <!-- ============================================================
+       CONTACT PANEL (slide-in)
+  ============================================================ -->
+  <div class="contact-panel" id="contactPanel">
+    <button class="contact-close" onclick="toggleContact()">
+      <span>×</span>
+    </button>
+    <div class="contact-panel-inner">
+      <h2>Contact</h2>
+      <a href="mailto:yaliyan786@gmail.com" class="contact-email">
+        <h3>yaliyan786@gmail.com</h3>
+      </a>
+      <a href="tel:+923461086062" class="contact-phone">
+        <h3>(+92) 346 108 6062</h3>
+      </a>
+      <div class="contact-form">
+        <input type="email" placeholder="Your email" />
+        <input type="text" placeholder="Your full name" />
+        <textarea placeholder="Your project"></textarea>
+        <button class="btn-send">Send</button>
+      </div>
+      <div class="contact-socials">
+        <a href="https://github.com/aliyan-yousaf" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/aliyan-yousaf" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.27V1.73C24 .77 23.21 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://x.com/aliyan_y31359" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://behance.net/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.61 1.864 1.661 1.864.807 0 1.27-.42 1.527-1.114l2.568.279zM15.973 14h4.09c-.043-1.17-.52-1.843-1.95-1.843-1.35 0-1.939.666-2.14 1.843zM4 2H1v20h3.78c5.9 0 7.5-3.9 7.5-7.02C12.28 11.9 11.2 9.7 9.2 8.8c1.56-.74 2.41-2.09 2.41-3.8C11.61 1.9 9.04 2 6.93 2H4zm.18 8.17V5.1h2.46c1.61 0 2.67.49 2.67 2.47 0 1.88-1.1 2.6-2.67 2.6H4.18zm0 7.66v-4.85h2.84c2.14 0 3.22.95 3.22 2.44 0 2.17-1.46 2.41-3.22 2.41H4.18z"/></svg>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="contact-overlay" id="contactOverlay" onclick="toggleContact()"></div>
 
-  <!-- PAGE 2: ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About me</h2>
-      <div class="about-flex">
-        <div class="about-text">
-          <p>Hi, I'm Aliyan — front-end developer and creative problem solver with 6+ years of experience building interfaces that feel intuitive and alive. My journey started in visual arts, and I fell in love with coding as a way to bring static designs into interactive ecosystems.</p>
-          <p>I believe the best products are born at the intersection of empathy, aesthetics, and performance. I've collaborated with startups, agencies, and global brands to deliver responsive, accessible web applications.</p>
-          <p>Currently diving deeper into WebGL animation and design systems. Outside of code, I mentor young creators and write about minimal UI principles.</p>
-          <div style="margin-top: 1.5rem;">
-            <span class="skill-tag">React / Next.js</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">c++</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">C#</span>
-            <span class="skill-tag">UX Research</span>
-          </div>
+  <!-- ============================================================
+       SIDEBAR NAV
+  ============================================================ -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="icon.jpeg" alt="Aliyan Yousaf" class="sidebar-avatar" />
+    </div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="#home" class="nav-link active" data-section="home" onclick="scrollToSection('home')">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#projects" class="nav-link" data-section="projects" onclick="scrollToSection('projects')">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          <span>Projects</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link" data-section="about" onclick="scrollToSection('about')">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <span>About Me</span>
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar-lang">
+      <span class="lang-active">EN</span>
+    </div>
+    <div class="sidebar-socials">
+      <a href="https://github.com/aliyan-yousaf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/aliyan-yousaf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.27V1.73C24 .77 23.21 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MAIN CONTENT WRAPPER
+  ============================================================ -->
+  <main class="main-content">
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="section hero-section" id="home">
+      <div class="hero-inner">
+        <div class="hero-profile-wrap">
+          <img src="icon.jpeg" alt="Aliyan" class="hero-profile-img" />
         </div>
-        <div class="about-stats">
-          <div class="stat-item">
-            <div class="stat-number">50+</div>
-            <div>projects delivered</div>
+        <div class="hero-text-wrap">
+          <div class="hero-line">
+            <span class="hero-num">01</span>
+            <h1 class="hero-heading">Hello, I'm Aliyan!</h1>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">12</div>
-            <div>tech partners</div>
+          <div class="hero-line">
+            <span class="hero-num">02</span>
+            <h1 class="hero-heading">I design &amp; develop</h1>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div>client recommended</div>
+          <div class="hero-line">
+            <span class="hero-num">03</span>
+            <h1 class="hero-heading hero-heading--accent">websites.</h1>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">🏆</div>
-            <div>Awwwards nominee '24</div>
+          <p class="hero-sub">I also build web applications, REST APIs, and interactive user interfaces.</p>
+          <div class="hero-projects-preview">
+            <div class="hero-project-thumb">
+              <div class="hero-project-placeholder" style="background: linear-gradient(135deg,#1a1a2e,#16213e)">
+                <span>Project 1</span>
+              </div>
+            </div>
+            <div class="hero-project-thumb">
+              <div class="hero-project-placeholder" style="background: linear-gradient(135deg,#0f3460,#533483)">
+                <span>Project 2</span>
+              </div>
+            </div>
+            <div class="hero-project-thumb">
+              <div class="hero-project-placeholder" style="background: linear-gradient(135deg,#e94560,#0f3460)">
+                <span>Project 3</span>
+              </div>
+            </div>
+            <a href="#projects" class="hero-learn-more" onclick="scrollToSection('projects')">Learn more</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <a class="scroll-arrow" onclick="scrollToSection('process')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
 
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Selected projects</h2>
+    <!-- ============================================================
+         PROCESS SECTION
+    ============================================================ -->
+    <section class="section process-section" id="process">
+      <div class="process-steps">
+        <div class="process-step"><span class="process-num">01</span><p>First, we need an</p></div>
+        <div class="process-step"><span class="process-num">02</span><p>idea…</p></div>
+        <div class="process-step"><span class="process-num">03</span><p>Then an analysis and a</p></div>
+        <div class="process-step"><span class="process-num">04</span><p>direction…</p></div>
+        <div class="process-step"><span class="process-num">05</span><p>Creativity takes place</p></div>
+        <div class="process-step"><span class="process-num">06</span><p>for the design.</p></div>
+        <div class="process-step"><span class="process-num">07</span><p>Finally, I code and</p></div>
+        <div class="process-step"><span class="process-num">08</span><p>I publish your website!</p></div>
+        <div class="process-step"><span class="process-num">09</span><p>You must be wondering</p></div>
+        <div class="process-step"><span class="process-num">10</span><p>…</p></div>
+      </div>
+
+      <!-- Chat bubble demo -->
+      <div class="chat-demo">
+        <div class="chat-bubble chat-bubble--client">
+          <div class="chat-avatar chat-avatar--client">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="chat-text">
+            <p>I need a website for my company, <strong>TechVenture.</strong> We specialize in building SaaS solutions for small businesses.</p>
+          </div>
+        </div>
+        <div class="chat-bubble chat-bubble--me">
+          <div class="chat-text">
+            <p>Alright, great! I'll handle everything — first the design that I'll share with you. Once validated, I'll develop your website and put it online!</p>
+          </div>
+          <div class="chat-avatar chat-avatar--me">
+            <img src="img/profile.svg" alt="Aliyan" />
+          </div>
+        </div>
+        <div class="chat-bubble chat-bubble--client">
+          <div class="chat-avatar chat-avatar--client">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="chat-text">
+            <p>Perfect, when do we start? 🙂</p>
+          </div>
+        </div>
+        <div class="chat-cta">
+          <a href="#" onclick="toggleContact(); return false;" class="chat-now-btn">Now!</a>
+        </div>
+      </div>
+
+      <a class="scroll-arrow" onclick="scrollToSection('analysis')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         ANALYSIS SECTION (case study)
+    ============================================================ -->
+    <section class="section analysis-section" id="analysis">
+      <div class="analysis-inner">
+        <div class="analysis-block">
+          <h3 class="analysis-label">Market analysis</h3>
+          <p>Competitors mainly target technical audiences. Their design is often generic and focused on feature lists, with little personality or warmth — especially in the SMB SaaS space.</p>
+        </div>
+        <div class="analysis-block">
+          <h3 class="analysis-label">Problem</h3>
+          <p>The target audience is varied — from solo entrepreneurs to small teams. We must communicate value clearly without being overly technical or losing non-technical decision makers.</p>
+        </div>
+        <div class="analysis-block">
+          <h3 class="analysis-label">Solution</h3>
+          <div class="solution-cards">
+            <div class="solution-mockup solution-mockup--desktop">
+              <div class="mockup-screen">
+                <div class="mockup-bar"></div>
+                <div class="mockup-content">
+                  <div class="mockup-line mockup-line--wide"></div>
+                  <div class="mockup-line mockup-line--medium"></div>
+                  <div class="mockup-line mockup-line--narrow"></div>
+                  <div class="mockup-blocks">
+                    <div class="mockup-block"></div>
+                    <div class="mockup-block"></div>
+                    <div class="mockup-block"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mockup-base"></div>
+            </div>
+            <div class="solution-mockup solution-mockup--mobile">
+              <div class="mockup-phone">
+                <div class="mockup-phone-notch"></div>
+                <div class="mockup-phone-content">
+                  <div class="mockup-line mockup-line--wide"></div>
+                  <div class="mockup-line mockup-line--medium"></div>
+                  <div class="mockup-line mockup-line--narrow"></div>
+                  <div class="mockup-phone-block"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="solution-points">
+            <div class="solution-point">
+              <div class="solution-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </div>
+              <div>
+                <h4>Highlight the product</h4>
+                <p>Showcasing key features allows addressing a broad clientele without confusion.</p>
+              </div>
+            </div>
+            <div class="solution-point">
+              <div class="solution-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <div>
+                <h4>Clean and modern page</h4>
+                <p>Thanks to the typography, colors, and subtle animations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-arrow" onclick="scrollToSection('services')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         SERVICES / FAQ SECTION
+    ============================================================ -->
+    <section class="section services-section" id="services">
+      <div class="services-inner">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+          </div>
+          <h4>How much does it cost?</h4>
+          <p>Tell me about your project — the cost depends on the time required. For a standard showcase site, expect between $1500–$3000. Larger projects are quoted based on time and complexity. I'll send you a detailed quote.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+          </div>
+          <h4>And after?</h4>
+          <p>You can modify content using the provided CMS! Training hours are included so you can update or add content yourself anytime.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3z"/></svg>
+          </div>
+          <h4>Sleep tight</h4>
+          <p>You can hand over support, updates, and maintenance to me — based on a monthly subscription plan that fits your needs.</p>
+        </div>
+      </div>
+      <a class="scroll-arrow" onclick="scrollToSection('projects')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION
+    ============================================================ -->
+    <section class="section projects-section" id="projects">
+      <h2 class="section-title">My best projects</h2>
       <div class="projects-grid">
+
         <div class="project-card">
-          <div class="card-img">🌿</div>
-          <div class="card-content">
-            <h3>Verdant Studio</h3>
-            <p>Minimalist portfolio for a sustainable design studio — featuring immersive scroll animations and dynamic theme.</p>
-            <div class="card-tech">
-              <span class="tech">React</span>
-              <span class="tech">GSAP</span>
-              <span class="tech">Framer Motion</span>
+          <div class="project-images">
+            <div class="project-img project-img--1" style="background: linear-gradient(135deg,#0f0c29,#302b63,#24243e)">
+              <div class="project-img-overlay"><span>Ecommerce Platform</span></div>
+            </div>
+            <div class="project-img project-img--2" style="background: linear-gradient(135deg,#302b63,#0f0c29)">
+              <div class="project-img-overlay"><span>Dashboard View</span></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>.ShopNest</h4>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live project
+              </a>
+              <a href="#" class="project-link">Web design / Presentation</a>
             </div>
           </div>
         </div>
+
         <div class="project-card">
-          <div class="card-img">📊</div>
-          <div class="card-content">
-            <h3>Analytics Hub</h3>
-            <p>Interactive dashboard for real-time data visualization, used by internal teams for KPI tracking and reports.</p>
-            <div class="card-tech">
-              <span class="tech">D3.js</span>
-              <span class="tech">Vue</span>
-              <span class="tech">Tailwind</span>
+          <div class="project-images">
+            <div class="project-img project-img--1" style="background: linear-gradient(135deg,#134e5e,#71b280)">
+              <div class="project-img-overlay"><span>Finance App</span></div>
+            </div>
+            <div class="project-img project-img--2" style="background: linear-gradient(135deg,#71b280,#134e5e)">
+              <div class="project-img-overlay"><span>Analytics</span></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>.FinFlow</h4>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live project
+              </a>
+              <a href="#" class="project-link">Web design / Dashboard</a>
             </div>
           </div>
         </div>
+
         <div class="project-card">
-          <div class="card-img">☕</div>
-          <div class="card-content">
-            <h3>Brewlogy App</h3>
-            <p>Cross-platform mobile experience for coffee lovers to track brewing recipes and discover new methods.</p>
-            <div class="card-tech">
-              <span class="tech">React Native</span>
-              <span class="tech">Firebase</span>
-              <span class="tech">Expo</span>
+          <div class="project-images">
+            <div class="project-img project-img--1" style="background: linear-gradient(135deg,#e96c4c,#b5432a)">
+              <div class="project-img-overlay"><span>Restaurant Booking</span></div>
+            </div>
+            <div class="project-img project-img--2" style="background: linear-gradient(135deg,#b5432a,#e96c4c)">
+              <div class="project-img-overlay"><span>Menu Page</span></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>.TableTaste</h4>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live project
+              </a>
+              <a href="#" class="project-link">Web design / Branding</a>
             </div>
           </div>
         </div>
+
         <div class="project-card">
-          <div class="card-img">🎨</div>
-          <div class="card-content">
-            <h3>Chromascope</h3>
-            <p>Generative art tool that creates color palettes from music input — Web Audio API + Canvas.</p>
-            <div class="card-tech">
-              <span class="tech">Canvas API</span>
-              <span class="tech">JS</span>
-              <span class="tech">Web Audio</span>
+          <div class="project-images">
+            <div class="project-img project-img--1" style="background: linear-gradient(135deg,#1a1a2e,#4a4e8a)">
+              <div class="project-img-overlay"><span>SaaS Dashboard</span></div>
+            </div>
+            <div class="project-img project-img--2" style="background: linear-gradient(135deg,#4a4e8a,#1a1a2e)">
+              <div class="project-img-overlay"><span>Analytics View</span></div>
             </div>
           </div>
+          <div class="project-info">
+            <h4>.DataPulse</h4>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live project
+              </a>
+              <a href="#" class="project-link">Web design / SaaS UI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-images">
+            <div class="project-img project-img--1" style="background: linear-gradient(135deg,#f8b500,#c0711e)">
+              <div class="project-img-overlay"><span>Portfolio</span></div>
+            </div>
+            <div class="project-img project-img--2" style="background: linear-gradient(135deg,#c0711e,#f8b500)">
+              <div class="project-img-overlay"><span>About Page</span></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>.CreativeHub</h4>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live project
+              </a>
+              <a href="#" class="project-link">Portfolio / Frontend</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-images">
+            <div class="project-img project-img--1" style="background: linear-gradient(135deg,#2d6a4f,#1b4332)">
+              <div class="project-img-overlay"><span>Blog Platform</span></div>
+            </div>
+            <div class="project-img project-img--2" style="background: linear-gradient(135deg,#1b4332,#2d6a4f)">
+              <div class="project-img-overlay"><span>Article View</span></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>.GreenBytes Blog</h4>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live project
+              </a>
+              <a href="#" class="project-link">Web design / CMS</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-nav">
+        <button class="proj-nav-btn" id="projPrev" onclick="navigateProjects(-1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="proj-nav-btn" id="projNext" onclick="navigateProjects(1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <a class="scroll-arrow" onclick="scrollToSection('about')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         ABOUT / BIO SECTION
+    ============================================================ -->
+    <section class="section about-section" id="about">
+      <div class="about-inner">
+        <div class="about-left">
+          <div class="about-profile-wrap">
+            <img src="icon.jpeg" alt="Aliyan" class="about-profile-img" />
+            <div class="about-profile-ring"></div>
+          </div>
+        </div>
+        <div class="about-right">
+          <h2 class="about-title">About Me</h2>
+          <p class="about-bio">
+            Hi, I'm <strong>Aliyan Yousaf</strong> - a passionate web developer and UX/UI designer based in Lahore, Pakistan. I craft fast, modern, and accessible digital experiences that help businesses grow online.
+          </p>
+          <p class="about-bio">
+            With a strong foundation in both frontend and backend development, I bring ideas to life from concept to deployment. I love clean code, beautiful interfaces, and meaningful products.
+          </p>
+
+          <!-- Skills -->
+          <div class="skills-wrap">
+            <h3 class="skills-title">Skills</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">HTML / CSS</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 95%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-pct">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 88%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">React / Next.js</span>
+                  <span class="skill-pct">82%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 82%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Node.js / Express</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 75%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">UX/UI Design</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 80%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Git / GitHub</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 90%"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">SQL / MongoDB</span>
+                  <span class="skill-pct">70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 70%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience timeline -->
+          <div class="timeline-wrap">
+            <h3 class="skills-title">Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2023 — Present</span>
+                  <h4>Freelance Web Developer & UI Designer</h4>
+                  <p>Building custom websites and web apps for clients across various industries.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2022 — 2023</span>
+                  <h4>Junior Frontend Developer — TechStartup PK</h4>
+                  <p>Developed and maintained React-based web applications for a growing startup.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2019 — 2022</span>
+                  <h4>B.Sc. Computer Science — FAST-NUCES Lahore</h4>
+                  <p>Graduated with honors. Focus on web technologies and software engineering.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work with me CTA -->
+          <a href="#" onclick="toggleContact(); return false;" class="work-with-me-btn">
+            Work with me
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PAGE 4: CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Let's connect</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <h3>Collaborate &amp; create</h3>
-          <p>I'm open for freelance work, full-time roles, or just a friendly chat about design systems. Drop me a message and I'll get back within 48h.</p>
-          <div class="contact-detail">
-            <div class="contact-icon">📧</div>
-            <div>hello@aliyan.design</div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">📱</div>
-            <div>+92 346 1086062</div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">🌐</div>
-            <div>Gujrat / remote worldwide</div>
-          </div>
-          <div style="margin-top: 1.8rem;">
-            <a href="#" style="text-decoration: none; margin-right: 1.5rem; color:#1e4a76; font-weight:500;">LinkedIn</a>
-            <a href="#" style="text-decoration: none; margin-right: 1.5rem; color:#1e4a76; font-weight:500;">GitHub</a>
-            <a href="#" style="text-decoration: none; color:#1e4a76; font-weight:500;">Instagram</a>
-          </div>
-        </div>
-        <div class="contact-form">
-          <form id="demo-contact-form" action="#" method="post">
-            <div class="form-group">
-              <input type="text" placeholder="Your name" required="">
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email address" required="">
-            </div>
-            <div class="form-group">
-              <textarea rows="4" placeholder="Tell me about your project or idea..."></textarea>
-            </div>
-            <button type="submit">Send message →</button>
-            <p style="font-size: 0.75rem; margin-top: 1rem; color:#7e95af;">*No spam, just human conversation</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+  </main>
 
-<footer>
-  <p>© 2026 Aliyan Yousaf — designed with curiosity &amp; care. All code and concepts original.</p>
-</footer>
+  <!-- ============================================================
+       FLOATING "WORK WITH ME" BUTTON
+  ============================================================ -->
+  <button class="work-with-me-float" onclick="toggleContact()">
+    Work with me
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
 
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script src="js/main.js"></script>
 </body>
 </html>
